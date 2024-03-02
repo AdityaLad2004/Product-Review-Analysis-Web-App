@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LDA Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .topic {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .topic h3 {
+            margin-top: 0;
+        }
+
+        .topic ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .topic ul li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>LDA Result: Product Review Topics</h1>
+    {% if topics %}
+    {% for topic in topics %}
+    <div class="topic">
+        <h3>Topic {{ topic[0] + 1 }}</h3>
+        <ul>
+            {% for word in topic[1] %}
+            <li>{{ word }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>No topics found.</p>
+    {% endif %}
+</body>
+
+</html>

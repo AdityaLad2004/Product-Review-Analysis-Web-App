@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+</head>
+
+<body>
+    <h1>Upload a CSV File</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv"><br><br>
+        <select id="analysisType" name="analysisType">
+            <option value="descriptive">Descriptive Analysis</option>
+            <option value="tlk">TLK Analysis</option>
+            <option value="senti">Sentiment Analysis</option>
+            <option value="ratingAna">Rating Analysis</option>
+            <option value="lda">LDA analysis</option>
+            <option value="summer">Summerization</option>
+        </select><br><br>
+        <input type="submit" value="Upload and Analyze">
+
+    </form>
+
+
+
+
+
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+</body>
+
+</html>

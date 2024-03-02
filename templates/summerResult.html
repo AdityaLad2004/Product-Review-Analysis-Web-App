@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review Summaries</title>
+</head>
+
+<body>
+    <h1>Product Review Summaries</h1>
+    {% if summaries %}
+    <div class="summaries">
+        {% for sku, summary in summaries.items() %}
+        <div class="summary">
+            <h2>SKU: {{ sku }}</h2>
+            <p>{{ summary }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No summaries available.</p>
+    {% endif %}
+</body>
+
+</html>
